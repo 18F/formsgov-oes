@@ -58,33 +58,38 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/test/**");
     }
 
-    @Override
+        @Override
     public void configure(HttpSecurity http) throws Exception {
-        // @formatter:off
-        http.csrf().disable()
-            .authorizeRequests()
-            .antMatchers( "/send-irs-payload")
-            .permitAll()
-            .antMatchers("/", "api/logout", "/logout-success","/*.woff2","/*.ttf", "/manifest.webapp", "/login**", "/callback/", "/webjars/**", "/error**", "/oauth2/authorization/**")
-            .permitAll()
-            .antMatchers("/form/**").authenticated()
-            .anyRequest()
-            .authenticated()
-            .and()
-            .logout()
-            .logoutSuccessUrl("/logout-success")
-            .and()
-            .oauth2Login()
-            .defaultSuccessUrl("/", true)
-            .and()
-            .oauth2ResourceServer()
-            .jwt()
-            .jwtAuthenticationConverter(authenticationConverter())
-            .and()
-            .and()
-            .oauth2Client();
-        // @formatter:on
+        http.csrf().disable().anonymous();
     }
+
+//    @Override
+//    public void configure(HttpSecurity http) throws Exception {
+//        // @formatter:off
+//        http.csrf().disable()
+//            .authorizeRequests()
+//            .antMatchers( "/send-irs-payload")
+//            .permitAll()
+//            .antMatchers("/", "api/logout", "/logout-success","/*.woff2","/*.ttf", "/manifest.webapp", "/login**", "/callback/", "/webjars/**", "/error**", "/oauth2/authorization/**")
+//            .permitAll()
+//            .antMatchers("/form/**").authenticated()
+//            .anyRequest()
+//            .authenticated()
+//            .and()
+//            .logout()
+//            .logoutSuccessUrl("/logout-success")
+//            .and()
+//            .oauth2Login()
+//            .defaultSuccessUrl("/", true)
+//            .and()
+//            .oauth2ResourceServer()
+//            .jwt()
+//            .jwtAuthenticationConverter(authenticationConverter())
+//            .and()
+//            .and()
+//            .oauth2Client();
+//        // @formatter:on
+//    }
 
     Converter<Jwt, AbstractAuthenticationToken> authenticationConverter() {
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();

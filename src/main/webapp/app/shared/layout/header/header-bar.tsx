@@ -16,11 +16,11 @@ const HeaderBar = (props: IHeaderProps) => {
   const [isOpen, setIsOpen] = useState([false, false]);
   const location = useLocation();
   const formsMenuItems = [
-    <Link to="/form/12153" key="12153">
-      Form-12153
+    <Link to="/form/form-A" key="a">
+      Form-A
     </Link>,
-    <Link to="/form/12203" key="12203">
-      Form-12203
+    <Link to="/form/form-B" key="b">
+      Form-B
     </Link>,
   ];
 
@@ -37,33 +37,31 @@ const HeaderBar = (props: IHeaderProps) => {
       <span>Home</span>
     </Link>,
     <>
-      {props.isAuthenticated && (
-        <>
-          <NavDropDownButton
-            menuId="formsDropDownOne"
-            onToggle={(): void => {
-              onToggle(0);
-            }}
-            isOpen={isOpen[0]}
-            label="Forms"
-            isCurrent={location.pathname === '/form/12153' || location.pathname === '/form/12203'}
-          />
-          <Menu key="one" items={formsMenuItems} isOpen={isOpen[0]} id="formsDropDownOne" />
-        </>
-      )}
+      <>
+        <NavDropDownButton
+          menuId="formsDropDownOne"
+          onToggle={(): void => {
+            onToggle(0);
+          }}
+          isOpen={isOpen[0]}
+          label="Forms"
+          isCurrent={location.pathname === '/form/form-A' || location.pathname === '/form/form-B'}
+        />
+        <Menu key="one" items={formsMenuItems} isOpen={isOpen[0]} id="formsDropDownOne" />
+      </>
     </>,
-    <>
-      {' '}
-      {!props.isAuthenticated ? (
-        <a href={getLoginUrl()} key="signin" className="usa-nav__link">
-          <span>Sign in</span>
-        </a>
-      ) : (
-        <a href="/logout" key="signout" className="usa-nav__link">
-          <span>Sign out</span>
-        </a>
-      )}
-    </>,
+    // <>
+    //   {' '}
+    //   {!props.isAuthenticated ? (
+    //     <a href={getLoginUrl()} key="signin" className="usa-nav__link">
+    //       <span>Sign in</span>
+    //     </a>
+    //   ) : (
+    //     <a href="/logout" key="signout" className="usa-nav__link">
+    //       <span>Sign out</span>
+    //     </a>
+    //   )}
+    // </>,
   ];
 
   return (
@@ -75,7 +73,7 @@ const HeaderBar = (props: IHeaderProps) => {
           <div className="usa-navbar">
             <Title>
               <Link to="/" key="jome">
-                <img src="content/images/irs-logo.png" alt="IRS logo" />
+                <img src="content/images/oes-logo.png" height={62} width={150} alt="OES logo" />
               </Link>
             </Title>
             <NavMenuButton onClick={onClick} label="Menu" />

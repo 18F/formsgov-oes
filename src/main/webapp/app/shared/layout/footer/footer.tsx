@@ -5,12 +5,8 @@ const Footer = () => (
     <hr />
     <div className="grid-row grid-gap">
       <div className="tablet:grid-col-12 child">
-        <a href="http://www.irs.gov" target="_blank" rel="noopener noreferrer" className="usa-link">
-          IRS.gov
-        </a>{' '}
-        &nbsp;| &nbsp;
-        <a href="https://forms.gov/" target="_blank" rel="noopener noreferrer" className="usa-link">
-          Forms.gov
+        <a href="https://oes.gsa.gov/" target="_blank" rel="noopener noreferrer" className="usa-link">
+          oes.gsa.gov
         </a>
       </div>
     </div>

@@ -40,27 +40,7 @@ export const Home = () => {
           </>
         ) : (
           <>
-            <Alert type="info" heading="Login Information" className="mt-4">
-              In order to complete this form you will need to log in using your login.gov account. <br />
-              Don&apos;t have a login.gov account?&nbsp;
-              <a
-                href="https://idp.int.identitysandbox.gov/sign_up/enter_email"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="usa-link"
-              >
-                Create an account at login.gov.
-              </a>
-            </Alert>
-            <a href={getLoginUrl()} key="signin" className="usa-nav__link">
-              <Button size="big" type="button" className="mt-5 mb-5">
-                <img src="content/images/logingov.png" alt="login.gov" className="mr-2" />
-                <span>Sign in with LOGIN.GOV</span>
-              </Button>
-            </a>
-            <h4 style={{ fontSize: '1.14rem' }}>
-              After completing the sign in process at login.gov you will be brought back to the IRS forms site.
-            </h4>
+            <h4 style={{ fontSize: '1.14rem' }}>Form A/B testing.</h4>
           </>
         )}
       </Col>

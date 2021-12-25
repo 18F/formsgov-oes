@@ -187,6 +187,6 @@ sign-request-base-url: ${SIGN_BASE_URL:https://irs.sign-dev.forms.gov/api/v1/}
 sign-request-create-url: ${SIGN_CREATE_URL:signrequest-quick-create/}
 sign-request-documents-url: ${SIGN_DOCUMENTS_URL:documents/}
 #IRS API
-irs-api-token: ${IRS_API_TOKEN:TLLANK29fUrzkXUjsnuDbEaB}
+irs-api-token: ${IRS_API_TOKEN:}
 irs-api-url: ${IRS_API_URL:https://iam-poc.wc2m.treasury.gov/iam/esignature/signatureForm}
 sign-event-callback-url: ${SIGN_EVENT_CALLBACK_URL:https://form-irs.app.cloud.gov/send-irs-payload}
