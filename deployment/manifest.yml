@@ -12,4 +12,4 @@ applications:
     # services:
     #   - formservice-rds
     routes:
-      - route: form-irs.app.cloud.gov
+      - route: form-oes.app.cloud.gov
