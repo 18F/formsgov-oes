@@ -7,9 +7,11 @@ import http from '../../shared/service/http-service';
 import { useAppSelector } from '../../../app/config/store';
 import LoadingOverlay from 'react-loading-overlay';
 import { FadeLoader } from 'react-spinners';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 Formio.use(uswds);
+
 export const Forms = () => {
+  const history = useHistory();
   const [submissionId, setSubmissionId] = useState(0);
   const [jwtToken, setJwtToken] = useState(0);
   const [user, setUser] = useState({});
@@ -41,9 +43,9 @@ export const Forms = () => {
       : '';
   const formSrcTest =
     location.pathname === '/form/form-A'
-      ? 'https://portal-dev.forms.gov/formssandbox-dev/oesforma'
+      ? 'https://portal-test.forms.gov/oes-dev/oessurveyforma'
       : location.pathname === '/form/form-B'
-      ? 'https://portal-dev.forms.gov/formssandbox-dev/oesformb'
+      ? 'https://portal-test.forms.gov/oes-dev/oessurveyformb'
       : '';
   let formData;
   const formioEnv = 'agencydemo-test';
@@ -54,7 +56,7 @@ export const Forms = () => {
   }, []);
   const requestData = {
     data: {
-      email: 'service@gsa.gov',
+      email: '',
       password: '',
     },
   };
@@ -95,6 +97,7 @@ export const Forms = () => {
     formData = e.data;
     getATokenKeyAndSign();
     setLoader(false);
+    history.push('/submissionSuccess');
   };
   const handleOnSubmit = event => {
     setSubmissionId(event._id);

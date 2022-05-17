@@ -39,9 +39,9 @@ export const Home = () => {
             </div>
           </>
         ) : (
-          <>
-            <h4 style={{ fontSize: '1.14rem' }}>Form A/B testing.</h4>
-          </>
+          <div className="text-center">
+            <h2>Welcome to OES Form survey!</h2>
+          </div>
         )}
       </Col>
     </Row>

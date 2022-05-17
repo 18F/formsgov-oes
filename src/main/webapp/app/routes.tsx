@@ -12,6 +12,8 @@ import Forms from './modules/forms/form';
 import LogoutSuccess from './modules/login/logout-success';
 import SignSuccess from './modules/forms/sign-success';
 import SignUnsuccessful from './modules/forms/sign-unsuccessful';
+import submissionSuccess from './modules/forms/formsubmission-success';
+
 // import SignRequest from './modules/forms/sign-request';
 const Admin = Loadable({
   loader: () => import(/* webpackChunkName: "administration" */ '../app/modules/administration'),
@@ -32,6 +34,7 @@ const Routes = () => {
         <ErrorBoundaryRoute path="/oauth2/authorization/oidc" component={LoginRedirect} />
         <ErrorBoundaryRoute path="/form/form-A" component={Forms} />
         <ErrorBoundaryRoute path="/form/form-B" component={Forms} />
+        <ErrorBoundaryRoute path="/submissionSuccess" exact component={submissionSuccess} />
         <ErrorBoundaryRoute component={PageNotFound} />
       </Switch>
     </div>

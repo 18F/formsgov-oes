@@ -1,0 +1,11 @@
+version: '3'
+services:
+  cf:
+    image: ppiper/cf-cli:latest
+    container_name: cf
+    command: /bin/bash
+    working_dir: /home/piper/app
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/home/piper/app

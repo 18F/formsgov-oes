@@ -36,7 +36,7 @@ export const App = () => {
   return (
     <Router basename={baseHref}>
       <div className="app-container">
-        <ToastContainer position={toast.POSITION.TOP_LEFT} className="toastify-container" toastClassName="toastify-toast" />
+        {/* <ToastContainer position={toast.POSITION.TOP_LEFT} className="toastify-container" toastClassName="toastify-toast" /> */}
         <ErrorBoundary>
           <HeaderBar isAuthenticated={isAuthenticated} isAdmin={isAdmin} isInProduction={isInProduction} />
         </ErrorBoundary>
@@ -51,7 +51,7 @@ export const App = () => {
             </div>
           </div>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

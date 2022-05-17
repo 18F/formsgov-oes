@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: IRS
+  - name: OES
     memory: 1GB
     path: .
     instances: 1
