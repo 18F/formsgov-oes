@@ -335,3 +335,33 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [cypress]: https://www.cypress.io/
 [leaflet]: https://leafletjs.com/
 [definitelytyped]: https://definitelytyped.org/
+
+
+
+## To deploy to Cloud.gov sandbox
+
+Get access to cloud.gov:
+https://cloud.gov/docs/getting-started/accounts/
+
+Install the CloudFoundry command line interface (CLI):
+https://cloud.gov/docs/getting-started/code-samples/
+
+
+Build the war file locally:
+gradlew -Pprod -Pwar clean bootWar
+
+If not logged in, do the below (https://cloud.gov/docs/getting-started/setup/)
+cf login -a api.fr.cloud.gov  --sso
+Navigate to the website and copy the temp auth code
+
+Then choose the org and space from the list (e.g.)
+sandbox-gsa
+syed.azeem
+
+Make sure to log in to cloud.gov and remove the application and any routes.  Then deploy.
+
+cf push -p build/libs/*.war or, for windows use the full filename, i.e.
+cf push -p build/libs/formservice-2.3.war
+cf push -p build/libs/forms-gov-0.0.1-SNAPSHOT.war
+
+Command takes a while.
