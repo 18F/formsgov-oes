@@ -4722,8 +4722,8 @@ fast-glob@^3.0.3, fast-glob@^3.1.1, fast-glob@^3.2.5:
     micromatch "^4.0.4"
 
 fast-json-patch@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/fast-json-patch/-/fast-json-patch-3.1.0.tgz"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/fast-json-patch/-/fast-json-patch-3.1.1.tgz#85064ea1b1ebf97a3f7ad01e23f9337e72c66947"
 
 fast-json-stable-stringify@2.x, fast-json-stable-stringify@^2.0.0, fast-json-stable-stringify@^2.1.0:
   version "2.1.0"
